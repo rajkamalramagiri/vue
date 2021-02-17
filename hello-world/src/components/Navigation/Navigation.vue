@@ -1,55 +1,42 @@
 <template>
   <div class="mx-auto overflow-hidden" height="400">
     <v-app-bar color="#070634" fixed>
-      <v-app-bar-nav-icon @click="drawer = true" dark></v-app-bar-nav-icon>
+      <v-list-item-icon>
+        <v-icon class="white menu" @click="drawer = true">mdi-menu</v-icon>
+      </v-list-item-icon>
 
       <img
         class="sunnyLogo"
         src="https://cdn.shopify.com/s/files/1/0046/2140/2241/files/SUNNY_eSTORE_stacked_-white_60x.png?v=1590139908"
       />
+      <v-list-item-icon>
+        <v-icon class="white account">mdi-account-circle</v-icon>
+      </v-list-item-icon>
+      <v-list-item-icon>
+        <v-icon class="white cart">mdi-cart-outline</v-icon>
+      </v-list-item-icon>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute temporary>
-      <!-- <ul>
-        <li class="listitems">Electronics</li>
-      </ul> -->
-      <v-list>
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
+      <v-list class="listitems">
+        <v-list-group
+          v-for="item in items"
+          :key="item.title"
+          v-model="item.active"
+          no-action
         >
-          <v-list-item>
-            <v-list-item-title class="listitems" @click="click"
-              >Electronics
-            </v-list-item-title>
-          </v-list-item>
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title"></v-list-item-title>
+            </v-list-item-content>
+          </template>
 
-          <v-list-item>
-            <v-list-item-title class="listitems"
-              >Acessories & Gadgets</v-list-item-title
-            >
+          <v-list-item v-for="child in item.items" :key="child.title">
+            <v-list-item-content>
+              <v-list-item-title v-text="child.title"></v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title class="listitems"
-              >Home & Office Appliances
-            </v-list-item-title> </v-list-item
-          ><v-list-item>
-            <v-list-item-title class="listitems"
-              >Food & Drinks</v-list-item-title
-            > </v-list-item
-          ><v-list-item>
-            <v-list-item-title class="listitems"
-              >Household Essentials</v-list-item-title
-            > </v-list-item
-          ><v-list-item>
-            <v-list-item-title class="listitems"
-              >Health & Beauty</v-list-item-title
-            > </v-list-item
-          ><v-list-item>
-            <v-list-item-title class="listitems">Promotions</v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -68,7 +55,80 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
-    toggle: ture,
+    items: [
+      {
+        items: [
+          { title: "Android Phones" },
+          { title: "iPhones" },
+          { title: "Computers" },
+          { title: "Tablets" },
+        ],
+        title: "Electronics",
+      },
+      {
+        items: [
+          { title: "Mobile accessories" },
+          { title: "Computer accessories" },
+          { title: "Camera accessories" },
+          { title: "Audio" },
+          { title: "Smart watches & accessories" },
+          { title: "Travel accessories" },
+          { title: "Other" },
+        ],
+        title: "Acessories & Gadgets",
+      },
+      {
+        items: [
+          { title: "Televisions" },
+          { title: "Washers & Dryers" },
+          { title: "Large Kitchen Appliances" },
+          { title: "Small Kitchen Applicances" },
+          { title: "Cooling & Air Quality" },
+          { title: "Lightning Solutions" },
+          { title: "Household Appliances" },
+        ],
+        title: "Home & Office Appliances",
+      },
+      {
+        items: [
+          { title: "Canned food" },
+          { title: "Instant noodles" },
+          { title: "Food Staples & Cooking Ingredients" },
+          { title: "Dairy" },
+          { title: "Snacks" },
+          { title: "Coffee & Tea" },
+          { title: "Non-alcoholic drinks" },
+          { title: "Alcoholic drinks" },
+        ],
+        title: "Food & Drinks",
+      },
+      {
+        items: [
+          { title: "Bath & Kitchen" },
+          { title: "Cleaning & Laundry" },
+          { title: "Stationery" },
+          { title: "Personal Care" },
+          { title: "Women's Care" },
+        ],
+        title: "Household Essentials",
+      },
+      {
+        items: [
+          { title: "Health & Beauty" },
+          { title: "Baby Care" },
+          { title: "Medicines & Medical Supplies" },
+          { title: "Supplements" },
+          { title: "Bath & Body" },
+          { title: "Makeup" },
+          { title: "Skincare" },
+          { title: "Haircare" },
+          { title: "Fragrances" },
+          { title: "Beauty Accessories" },
+          { title: "Vitamins & Supplements" },
+        ],
+        title: "Health & Beauty",
+      },
+    ],
   }),
   methods: {
     click() {
@@ -77,3 +137,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.menu {
+  margin-right: 10px;
+}
+.white {
+  color: white !important;
+}
+.account {
+  margin-left: 190px;
+  margin-right: 50px;
+}
+</style>

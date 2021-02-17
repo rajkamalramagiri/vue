@@ -1,12 +1,7 @@
 <template>
   <div>
     <div class="test">
-      <v-text-field
-        label="Search"
-        solo-inverted
-        hide-details
-        clearable
-      ></v-text-field>
+      <v-text-field label="Search" solo hide-details clearable></v-text-field>
     </div>
   </div>
 </template>
