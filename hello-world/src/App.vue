@@ -1,16 +1,18 @@
 <template>
-  <div>
-    <Message />
-  </div>
+  <Navigation />
 </template>
 
 <script>
-import Message from "./components/Message";
+import Navigation from "./components/Navigation/Navigation";
 export default {
   name: "App",
+
   components: {
-    Message,
+    Navigation,
   },
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-
