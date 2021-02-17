@@ -1,3 +1,12 @@
 .white {
   color: white;
 }
+
+.sunnyLogo {
+  width: 60px;
+  height: 60px;
+  padding: 6px;
+}
+.navicon {
+  margin: 0px;
+}
