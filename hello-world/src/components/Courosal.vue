@@ -1,18 +1,20 @@
 <template>
+  <!-- <v-carousel>
+      <v-carousel-item
+            :v-for="(itemnextArtistImagei) in artistImagesList"
+            :key="i"
+            ><img :src="nextArtistImage.image_url" :alt="nextArtistImage.image_url"/>
+      </v-carousel-item>
+</v-carousel> -->
+
   <v-carousel
     cycle
-    height="150"
     hide-delimiter-background
     show-arrows-on-hover
     :show-arrows="false"
   >
-    <v-carousel-item
-      v-for="item in meetups"
-      :key="item.id"
-      v-bind:src="item.image"
-      aspect-ratio="2"
-      class="img"
-    >
+    <v-carousel-item v-for="item in meetups" :key="item.id">
+      <img :src="item.image" class="img1" />
       <!-- <v-sheet :color="colors[i]" height="100%"> -->
       <!-- <v-row class="fill-height" align="center" justify="center"> -->
       <!-- <div class="display-3">{{ slide }} Slide</div> -->
@@ -57,11 +59,13 @@ export default {
 </script>
 
 <style scoped>
-.img {
-  width: auto !important;
+.cover {
+  height: 100px;
+}
+.img1 {
+  width: auto;
   max-width: 100%;
-  height: auto !important;
-  object-fit: scale-down !important;
-  overflow: hidden;
+  height: auto;
+  object-fit: contain;
 }
 </style>

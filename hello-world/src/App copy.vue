@@ -1,13 +1,14 @@
 <template>
   <div>
     <Total />
-    <Slider />
 
     <!-- <Navigation /> -->
     <!-- <Search /> -->
+    <Slider />
+
     <Courosal />
   </div>
-</template>
+</template  >
 
 
 <script>
@@ -23,8 +24,8 @@ export default {
     // Navigation,
     // Search,
     Courosal,
-    Slider,
     Total,
+    Slider,
   },
 
   data: () => ({
