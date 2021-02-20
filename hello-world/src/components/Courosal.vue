@@ -59,13 +59,8 @@ export default {
 </script>
 
 <style scoped>
-.cover {
-  height: 100px;
-}
 .img1 {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 30%;
 }
 </style>

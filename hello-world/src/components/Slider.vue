@@ -48,6 +48,24 @@
         class="slider-image"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRYN-qQ2rHTCOcJ5b9rj2jW-sE6J_zxrsTfw&usqp=CAU"
       />
+
+      <div>sachin</div>
+    </div>
+    <div class="slider-image-cover">
+      <img
+        class="slider-image"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRYN-qQ2rHTCOcJ5b9rj2jW-sE6J_zxrsTfw&usqp=CAU"
+      />
+
+      <div>sachin</div>
+    </div>
+
+    <div class="slider-image-cover">
+      <img
+        class="slider-image"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRYN-qQ2rHTCOcJ5b9rj2jW-sE6J_zxrsTfw&usqp=CAU"
+      />
+
       <div>sachin</div>
     </div>
   </div>
