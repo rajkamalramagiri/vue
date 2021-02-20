@@ -53,7 +53,6 @@ table {
   padding: 0px;
 }
 .container {
-  width: 100vw;
   margin: 30px;
   padding: 10px;
   margin-top: 0px;
